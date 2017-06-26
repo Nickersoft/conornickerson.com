@@ -1,0 +1,70 @@
+doctype html
+
+-
+    var nav_items = {
+        'home': '/landing',
+        'about': '/about',
+        'photography': '/photography',
+        'videos': 'http://conornickerson.wixsite.com/site/video',
+        'connect': '/connect'
+    };
+
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
+        title
+            block title
+                | Conor Nickerson
+
+        link(rel='icon', type='image/png', href='/images/favicon.png')
+
+        block css
+
+    body
+        main
+            block content
+
+        footer
+            nav.mobile_nav#mobile_nav
+                ul
+                    each value, key in nav_items
+                        - var className = (activeEl.toLowerCase() === key.toLowerCase()) ? 'active' : '';
+
+                        li(class=className)
+                            - var isExternalLink = value[0] !== '/';
+                            if isExternalLink
+                                a(href=value, target='_blank')= key
+                            else
+                                a(href=value)= key
+            .container
+                div.hamburger
+                    span.fa.fa-bars#mobile_nav_toggle
+                nav.primary_nav
+                    ul
+                        each value, key in nav_items
+                            - var className = (activeEl.toLowerCase() === key.toLowerCase()) ? 'active' : '';
+                            - var text = __('navigation.' + key);
+
+                            li(class=className)
+                                - var isExternalLink = value[0] !== '/';
+                                if isExternalLink
+                                    a(href=value, target='_blank')= text
+                                else
+                                    a(href=value)= text
+
+                span.credits
+                    != __('footer')
+
+        script(src='https://code.jquery.com/jquery.min.js')
+        script(type='text/javascript').
+            $(document).ready(function () {
+                $('main').css('opacity', 1);
+                $('#mobile_nav_toggle').click(function() {
+                    $('#mobile_nav').fadeToggle('fast');
+                });
+            });
+
+
+        block js

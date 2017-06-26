@@ -1,0 +1,67 @@
+@import 'main';
+
+body main {
+    @media (max-width: 700px) {
+        padding: 0;
+    }
+}
+
+.title {
+    @include transform(translateY(-35%));
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+        font-size: 7em;
+        padding: 0 10px;
+        opacity: 0;
+
+        @media (max-width: 700px) {
+            font-size: 4em;
+         }
+    }
+
+    .subtext {
+        @extend h1;
+        font-size: 2em !important;
+        margin: 0 0 100px !important;
+        padding: 0 !important;
+        opacity: 0;
+
+        @media (max-width: 500px) {
+            font-size: 1.5em !important;
+         }
+    }
+
+    .languages {
+        display: block;
+        text-align: center;
+
+        .language {
+            @include transition(opacity 0.5s ease-in-out);
+
+            border-right: 1px solid #1a1a1a;
+            background-size: cover;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.4em;
+            padding: 0 12px;
+            text-transform: uppercase;
+            opacity: 0;
+
+            &:last-child {
+                border: none;
+                padding-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        width: 100%;
+     }
+}

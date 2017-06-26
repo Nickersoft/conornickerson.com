@@ -1,0 +1,59 @@
+extends layout.pug
+
+block title
+    | #{__('music.title')} | Conor Nickerson
+
+block css
+    link(rel='stylesheet', type='text/css', href='/css/music.css')
+
+block content
+    .container
+        h1
+            a(href='/music') #{__('music.title')}
+        br
+        ul.social
+            li
+                a.fa.fa-play(href='https://play.google.com/store/music/artist/Conor_Nickerson?id=At5k2mx7qhuyp7os2rynefhwfli', target='_blank')
+            li
+                a.fa.fa-apple(href='https://itunes.apple.com/us/artist/conor-nickerson/id1090698559', target='_blank')
+            li
+                a.fa.fa-amazon(href='https://www.amazon.com/s/ref=ntt_srch_drd_B01CLZD1BQ?ie=UTF8&field-keywords=Conor%20Nickerson&index=digital-music&search-type=ss', target='_blank')
+            li
+                a.fa.fa-soundcloud(href='https://soundcloud.com/conor-nickerson', target='_blank')
+            li
+                a.fa.fa-spotify(href='https://play.spotify.com/album/4KbkIU8aeZdovtXnwTvOLO', target='_blank')
+            li
+                a.fa.fa-bandcamp(href='https://conornickerson.bandcamp.com/', target='_blank')
+
+        .albums
+            // Bell Street (Single)
+            iframe(style='border: 0; width: 350px; height: 442px;', src='https://bandcamp.com/EmbeddedPlayer/track=2255001498/size=large/bgcol=ffffff/linkcol=e74c3c/tracklist=false/transparent=true/', seamless='')
+                a(href='http://conornickerson.bandcamp.com/track/bell-street')
+                    | Bell Street by Conor Nickerson
+
+            // Conor Nickerson
+            iframe(style='border: 0; width: 350px; height: 470px;', src='https://bandcamp.com/EmbeddedPlayer/album=2453266802/size=large/bgcol=ffffff/linkcol=e74c3c/tracklist=false/transparent=true/', seamless='')
+                a(href='http://conornickerson.bandcamp.com/album/conor-nickerson')
+                    | Conor Nickerson by Conor Nickerson
+
+            // Éther et le Vide
+            iframe(style='border: 0; width: 350px; height: 470px;', src='https://bandcamp.com/EmbeddedPlayer/album=3213693067/size=large/bgcol=ffffff/linkcol=e74c3c/tracklist=false/transparent=true/', seamless='')
+                a(href='http://conornickerson.bandcamp.com/album/l-ther-et-le-vide')
+                    | l'Éther et le Vide by Conor Nickerson
+
+block js
+    script(type='text/javascript').
+        var iframe_count = 0,
+            iframe_desired = 3, // we have three iframes, so wait for each to load
+            delay = 0,
+            callback = function() {
+                if (iframe_count + 1 == iframe_desired) {
+                    $('iframe').each(function() {
+                        $(this).delay(delay).animate({ opacity: 1 }, 1000);
+                        delay += 250;
+                    });
+                } else {
+                    iframe_count++;
+                }
+            }
+        $('iframe').css('opacity', 0).load(callback);

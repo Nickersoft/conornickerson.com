@@ -1,0 +1,68 @@
+@import 'main';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css';
+
+body main h1 {
+    @media (max-width: 800px) {
+        font-size: 1.8em;
+    }
+
+    span {
+        &:before {
+            content: '/';
+            margin-right: 4px;
+        }
+
+        @media (max-width: 800px) {
+            display: block;
+        }
+    }
+}
+
+section {
+    text-align: center;
+
+    &:last-child {
+        margin-bottom: 25px;
+    }
+}
+
+.photos {
+    @include column-gap(0);
+    @include column-count(3);
+
+    display: block;
+    line-height: 0;
+    margin: 0 auto;
+
+    img, a {
+        outline: none !important;
+    }
+
+    img {
+        @include transition(opacity 0.25s ease-in-out);
+
+        /* Just in case there are inline attributes */
+        cursor: pointer !important;
+        width: 100% !important;
+        height: auto !important;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    @media (max-width: 800px) {
+        @include column-count(2);
+    }
+
+    @media (max-width: 400px) {
+        @include column-count(1);
+    }
+}
+
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur
+.mfp-image-holder
+.mfp-close {
+    cursor: default !important;
+}

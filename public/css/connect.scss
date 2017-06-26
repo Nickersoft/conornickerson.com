@@ -1,0 +1,13 @@
+@import 'main';
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.connect {
+    @include transform(translateY(-75%) translateX(-50%));
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "conor",
+  "version": "1.0.0",
+  "description": "Conor Nickerson's homepage",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "develop": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Nickerson",
+  "license": "ISC",
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "harp": "^0.23.0",
+    "i18n": "^0.8.3",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
