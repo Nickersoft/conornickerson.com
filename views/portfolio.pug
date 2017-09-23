@@ -1,153 +1,31 @@
 extends layout.pug
 
 block title
-    | #{__('photography.portfolio.title')} | Conor Nickerson
+    | #{__('portfolio.title')} | Conor Nickerson
 
 block css
-    link(rel='stylesheet', type='text/css', href='/css/photography.portfolio.css')
+    link(rel='stylesheet', type='text/css', href='/css/portfolio.css')
 
 block content
-    -
-        var sections = [
-            {
-                title: __('photography.portfolio.people.title'),
-                images: [
-                    '/images/portfolio/people/_MG_2214-min.jpg',
-                    '/images/portfolio/people/_MG_2148-min.jpg',
-                    '/images/portfolio/people/_MG_2145-min.jpg',
-                    '/images/portfolio/people/_MG_2200-min.jpg',
-                    '/images/portfolio/people/_MG_2058-min.jpg',
-                    '/images/portfolio/people/_MG_2045-min.jpg',
-                    '/images/portfolio/people/_MG_2035-min.jpg',
-                    '/images/portfolio/people/_MG_2020-min.jpg',
-                    '/images/portfolio/people/_MG_1999-min.jpg',
-                    '/images/portfolio/people/_MG_1963-min.jpg',
-                    '/images/portfolio/people/_MG_1956-min.jpg',
-                    '/images/portfolio/people/_MG_1948-min.jpg',
-                    '/images/portfolio/people/_MG_1857-min.jpg',
-                    '/images/portfolio/people/_MG_1841-2-min.jpg',
-                    '/images/portfolio/people/_MG_1812-min.jpg',
-                    '/images/portfolio/people/_MG_1717-min.jpg',
-                    '/images/portfolio/people/_MG_1693-min.jpg',
-                    '/images/portfolio/people/_MG_1680-min.jpg',
-                    '/images/portfolio/people/_MG_1646-min.jpg',
-                    '/images/portfolio/people/ag.jpg',
-                    '/images/portfolio/people/min.jpg',
-                    '/images/portfolio/people/tob.jpg',
-                    '/images/portfolio/people/an.jpg'
-                ]
-            },
-            {
-                title: __('photography.portfolio.music.title'),
-                images: [
-                    '/images/portfolio/music/ndg3 (1).jpg',
-                    '/images/portfolio/music/ndg3 (2).jpg',
-                    '/images/portfolio/music/ndg3 (3).jpg',
-                    '/images/portfolio/music/ndg3 (4).jpg',
-                    '/images/portfolio/music/ndg3 (5).jpg',
-                    '/images/portfolio/music/ndg3 (6).jpg',
-                    '/images/portfolio/music/ndg3 (7).jpg',
-                    '/images/portfolio/music/cm (1).jpg',
-                    '/images/portfolio/music/cm (2).jpg',
-                    '/images/portfolio/music/cm (3).jpg',
-                    '/images/portfolio/music/cm (4).jpg',
-                    '/images/portfolio/music/cm (5).jpg',
-                    '/images/portfolio/music/cm (6).jpg',
-                    '/images/portfolio/music/cm (7).jpg',
-                    '/images/portfolio/music/ep (1).jpg',
-                    '/images/portfolio/music/ep (2).jpg',
-                    '/images/portfolio/music/ep (3).jpg',
-                    '/images/portfolio/music/ep (4).jpg',
-                    '/images/portfolio/music/pp (1).jpg',
-                    '/images/portfolio/music/pp (2).jpg',
-                    '/images/portfolio/music/pp (3).jpg',
-                    '/images/portfolio/music/gsc (1).jpg',
-                    '/images/portfolio/music/gsc (2).jpg',
-                    '/images/portfolio/music/_MG_0018-min.jpg'
-                ]
-            },
-            {
-                title: __('photography.portfolio.city.title'),
-                images: [
-                    '/images/portfolio/city/_MG_1294-min.jpg',
-                    '/images/portfolio/city/_MG_1213-min.jpg',
-                    '/images/portfolio/city/_MG_1258-min.jpg',
-                    '/images/portfolio/city/_MG_1303-min.jpg',
-                    '/images/portfolio/city/_MG_1308-min.jpg',
-                    '/images/portfolio/city/_MG_1321-min.jpg',
-                    '/images/portfolio/city/_MG_1333-min.jpg',
-                    '/images/portfolio/city/_MG_1419 - Copy-min.jpg',
-                    '/images/portfolio/city/_MG_1562-min.jpg',
-                    '/images/portfolio/city/_MG_1613-min.jpg',
-                    '/images/portfolio/city/_MG_1772 (2)-min.jpg',
-                    '/images/portfolio/city/IMG_0008.jpg',
-                    '/images/portfolio/city/IMG_0009.jpg',
-                    '/images/portfolio/city/IMG_0013.jpg',
-                    '/images/portfolio/city/IMG_0020.jpg',
-                    '/images/portfolio/city/IMG_0284.jpg',
-                    '/images/portfolio/city/IMG_0060.jpg',
-                    '/images/portfolio/city/IMG_0049.jpg',
-                    '/images/portfolio/city/cp (1).jpg',
-                    '/images/portfolio/city/cp (2).jpg',
-                    '/images/portfolio/city/cp (3).jpg'
-                ]
-            },
-            {
-                title: __('photography.portfolio.rural.title'),
-                images: [
-                    '/images/portfolio/rural/_MG_0203.jpg',
-                    '/images/portfolio/rural/_MG_0205.jpg',
-                    '/images/portfolio/rural/_MG_0211.jpg',
-                    '/images/portfolio/rural/IMG_0032.jpg',
-                    '/images/portfolio/rural/Window.jpg',
-                    '/images/portfolio/rural/rp (1).jpg',
-                    '/images/portfolio/rural/rp (2).jpg',
-                    '/images/portfolio/rural/rp (3).jpg',
-                    '/images/portfolio/rural/rp (4).jpg',
-                    '/images/portfolio/rural/rp (5).jpg',
-                    '/images/portfolio/rural/rp (6).jpg',
-                    '/images/portfolio/rural/rp (8).jpg',
-                    '/images/portfolio/rural/rp (9).jpg',
-                    '/images/portfolio/rural/rp (10).jpg',
-                    '/images/portfolio/rural/rp (11).jpg',
-                    '/images/portfolio/rural/rp (12).jpg',
-                    '/images/portfolio/rural/rp (13).jpg',
-                    '/images/portfolio/rural/rp (14).jpg'
-                ]
-            }
-        ];
+    .fade
+        .container
+            h1
+                a(href='/photography') #{__('portfolio.title')}
+            br
+            ul.social
+                li
+                    a.fa.fa-instagram(href='https://www.instagram.com/conornickerson/', target='_blank')
+                li
+                    a.fa.fa-flickr(href='https://www.flickr.com/photos/125461361@N03/albums', target='_blank')
 
-    .container
-        h1
-            a(href='/photography') #{__('photography.title')}
-            span
-                a(href='/portfolio') #{__('photography.portfolio.title')}
+        section.portraits
+            a(href='/' + getLocale() + '/portfolio/portraits') #{__('portfolio.portraits')}
 
-        each section in sections
-            section
-                h2= section.title
-                p!= section.description
-                .photos
-                    each image in section.images
-                        a.image-popup-no-margins(href=image)
-                            img(src=image)
+        section.city
+            a(href='/' + getLocale() + '/portfolio/city') #{__('portfolio.city')}
 
-block js
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js')
-        script(type='text/javascript').
-            $(document).ready(function() {
-                $('.image-popup-no-margins').magnificPopup({
-                    type: 'image',
-                    closeOnContentClick: true,
-                    closeBtnInside: false,
-                    fixedContentPos: true,
-                    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-                    image: {
-                        verticalFit: true
-                    },
-                    zoom: {
-                        enabled: true,
-                        duration: 300 // don't foget to change the duration also in CSS
-                    }
-                });
-            });
+        section.rural
+            a(href='/' + getLocale() + '/portfolio/rural') #{__('portfolio.rural')}
+
+        section.careers
+            a(href='/' + getLocale() + '/portfolio/work') #{__('portfolio.work')}

@@ -49,12 +49,16 @@ router.get('/music', function (req, res) {
     res.render('music', { activeEl: 'music' });
 });
 
-router.get('/photography', function (req, res) {
-    res.render('photography', { activeEl: 'photography' });
+router.get('/projects', function (req, res) {
+    res.render('projects', { activeEl: 'projects' });
 });
 
 router.get('/portfolio', function (req, res) {
-    res.render('portfolio', { activeEl: 'photography' });
+    res.render('portfolio', { activeEl: 'portfolio' });
+});
+
+router.get('/portfolio/:collection', function (req, res) {
+    res.render(`portfolio/${req.params.collection}`, { activeEl: 'portfolio' });
 });
 
 router.get('/connect', function (req, res) {
@@ -76,5 +80,5 @@ app.use('/fr', function(req, res, next) {
 /*** START SERVER ***/
 
 app.listen(8888, function () {
-    console.log('Example app listening on port 8888!');
+    console.log('Server listening on port 8888!');
 });

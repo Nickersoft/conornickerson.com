@@ -5,7 +5,7 @@ h1 {
 }
 
 .connect {
-    @include transform(translateY(-75%) translateX(-50%));
+    transform: translateY(-75%) translateX(-50%);
 
     position: absolute;
     left: 50%;

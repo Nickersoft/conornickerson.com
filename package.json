@@ -4,7 +4,8 @@
   "description": "Conor Nickerson's homepage",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "debug": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Nickerson",
@@ -12,12 +13,12 @@
   "dependencies": {
     "bourbon": "^4.3.4",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3",
+    "express": "^4.15.4",
     "harp": "^0.24.0",
     "i18n": "^0.8.3",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.12.1"
   }
 }

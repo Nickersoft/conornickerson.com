@@ -1,0 +1,28 @@
+extends layout.pug
+
+block title
+    | #{__('projects.title')} | Conor Nickerson
+
+block css
+    link(rel='stylesheet', type='text/css', href='/css/projects.css')
+
+block content
+    .fade
+        .container
+            h1
+                a(href='/photography') #{__('projects.title')}
+            br
+            ul.social
+                li
+                    a.fa.fa-instagram(href='https://www.instagram.com/conornickerson/', target='_blank')
+                li
+                    a.fa.fa-flickr(href='https://www.flickr.com/photos/125461361@N03/albums', target='_blank')
+
+        section.colorized
+            a(href='http://conornickerson.wixsite.com/site/colorization', target='_blank') #{__('projects.colorized_history')}
+
+        section.tan
+            a(href='http://conornickerson.wixsite.com/site/then-now', target='_blank') #{__('projects.then_and_now')}
+
+        section.childhood
+            a(href='/' + getLocale() + '/portfolio') #{__('projects.childhood')}

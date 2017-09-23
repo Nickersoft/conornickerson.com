@@ -1,19 +1,19 @@
 @import 'main';
 
 .albums {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 
-    iframe {
-        display: inline-block;
-        margin: 0 10px 25px;
-        vertical-align: top;
+  iframe {
+    display: inline-block;
+    margin: 0 10px 25px;
+    vertical-align: top;
 
-        @media (max-width: 400px) {
-            margin: 0 0 25px;
-            width: 100% !important;
-            height: 450px !important;
-        }
+    @media (max-width: 400px) {
+      margin: 0 0 25px;
+      width: 100% !important;
+      height: 450px !important;
     }
+  }
 }

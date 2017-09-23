@@ -7,8 +7,9 @@ block css
     link(rel='stylesheet', type='text/css', href='/css/landing.css')
 
 block content
-    .container
+    .sidebar
         .title
+            img.logo(src="/images/logo.png")
             h1 Conor Nickerson
             .subtext !{__('landing.subtext')}
             .languages
@@ -17,6 +18,7 @@ block content
                     if language == getLocale()
                         - classes.push('active');
                     a(class=classes, href='/' + language, data-lang=language) #{language}
+    .image.fade
 
 block js
         script(type='text/javascript').
@@ -51,7 +53,7 @@ block js
                         });
                     } else {
                         $(this).delay(current_delay).queue(function (next) {
-                            $(this).css('opacity', 0.5);
+                            $(this).css('opacity', 0.4);
                             next();
                         });
                     }
@@ -62,7 +64,7 @@ block js
 
                     $(this).mouseout(function() {
                         if (!$(this).hasClass('active')) {
-                            $(this).css('opacity', 0.5);
+                            $(this).css('opacity', 0.4);
                         }
                     });
 

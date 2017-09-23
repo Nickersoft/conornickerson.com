@@ -2,11 +2,12 @@
 	"landing": {
 		"title": "Accueil",
 		"subtext": "Photographie"
-    },
+	},
 	"navigation": {
 		"home": "Home",
 		"about": "À Propos",
-		"photography": "Photographie",
+		"projects": "Projets",
+		"portfolio": "Portfolio",
 		"videos": "Videos",
 		"connect": "Connectez"
 	},
@@ -15,30 +16,38 @@
 		"content": "<p> Conor Nickerson est un photographe et musicien à Montréal, originaire du Massachusetts aux ÉU. Avec une vrai passion pour la musique, Conor a joué dans des lieux comme le Kennedy Center for the Performing Arts à Washington DC, la Boston Symphony Hall, et le Chicago Symphony Center, et il est formé comme musicien classique et jazz. En multi-instrumentaliste, Conor joue un mélange de genres et il compose. Jouant la contrebasse, la guitare, le saxophone, le piano, le harmonium, la batterie, les vocales, et d’autre pour ses enregistrements. C’est un musicien réellement autosuffisant. </p> <p> Comme un photographe, la photographie de Conor a été partagé par le Montreal Gazette, le Breakfast Television, et l’Université McGill. Si c’est la photographie de la mode, les portraits, les profils des artistes, la photographie d'événements, ou bien tout le reste, Conor est toujours en train de développer son portefeuille. Avec l'expérience avec l’ajoute de couleurs aux photographes historiques, le post-production, et l’édition de photos, Conor est pratiqué en Adobe Lightroom et Photoshop et le développement de film. Comme vidéaste amateur, Conor travaille faisant des vidéos pour les musiciens, les courts métrages, et les sketches. </p> <p> Conor finis son Diplôme de premier cycle comme saxophoniste jazz au renommé <a href=\"http://www.mcgill.ca/music/\" target=\"_blank\">École de Musique Schulich </a> à <a href=\"http://www.mcgill.ca/\" target=\"_blank\">l’Université McGill </a> et il est l'éditeur de photos au <a href=\"http://www.mcgilldaily.com/\" target=\"_blank\">McGill Daily</a>. </p>",
 		"title": "À Propos"
 	},
-	"photography": {
-		"title": "Photographie",
+	"projects": {
+		"title": "Projets",
 		"colorized_history": "Colorization",
-		"view_portfolio": "Portfolio",
+		"childhood": "Childhood",
 		"coming_soon": "Prochainement",
-		"then_and_now": "Then & Now",
-		"portfolio": {
-			"title": "Portfolio",
-      "people": {
-        "title": "Portrait"
-      },
-      "music": {
-		    "title": "Musique"
-			},
-			"city": {
-				"title": "Cité"
-			},
-			"rural": {
-				"title": "Campagne"
-			}
-		}
+		"then_and_now": "Then & Now"
+	},
+	"portfolio": {
+		"title": "Portfolio",
+		"portraits": "Portraits",
+		"work": "At Work",
+		"city": "Cité",
+		"rural": "Campagne"
 	},
 	"connect": {
 		"title": "Connectez avec Conor"
 	},
-	"footer": "&copy; 2017 Conor Nickerson. Site designed by <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>"
+	"footer": "&copy; 2017 Conor Nickerson. Site designed by <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>",
+	"photography": {
+		"portfolio": {
+			"people": {
+				"title": "photography.portfolio.people.title"
+			},
+			"music": {
+				"title": "photography.portfolio.music.title"
+			},
+			"city": {
+				"title": "photography.portfolio.city.title"
+			},
+			"rural": {
+				"title": "photography.portfolio.rural.title"
+			}
+		}
+	}
 }

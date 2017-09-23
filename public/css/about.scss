@@ -21,7 +21,7 @@
     }
 
     @media (max-width: 400px) {
-        @include transform(none);
+        transform: none;
 
         margin-top: 25px;
         margin-bottom: 100px;

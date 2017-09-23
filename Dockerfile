@@ -1,4 +1,4 @@
-FROM node:7.10
+FROM node:8.5-alpine
 
 ADD package.json /tmp/package.json
 RUN cd /tmp && npm install
@@ -7,7 +7,7 @@ RUN mkdir -p /server && cp -a /tmp/node_modules /server
 WORKDIR /server
 ADD . /server
 
-RUN npm install
+RUN yarn install
 
 WORKDIR /server
 
