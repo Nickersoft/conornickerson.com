@@ -26,28 +26,12 @@
 	"portfolio": {
 		"title": "Portfolio",
 		"portraits": "Portraits",
-		"work": "At Work",
+		"music": "Musique",
 		"city": "Cité",
 		"rural": "Campagne"
 	},
 	"connect": {
 		"title": "Connectez avec Conor"
 	},
-	"footer": "&copy; 2017 Conor Nickerson. Site designed by <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>",
-	"photography": {
-		"portfolio": {
-			"people": {
-				"title": "photography.portfolio.people.title"
-			},
-			"music": {
-				"title": "photography.portfolio.music.title"
-			},
-			"city": {
-				"title": "photography.portfolio.city.title"
-			},
-			"rural": {
-				"title": "photography.portfolio.rural.title"
-			}
-		}
-	}
+	"footer": "&copy; 2017 Conor Nickerson. Site conçu par <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>"
 }
