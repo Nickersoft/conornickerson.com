@@ -53,6 +53,10 @@ router.get('/projects', function (req, res) {
     res.render('projects', { activeEl: 'projects' });
 });
 
+router.get('/projects/:page', function (req, res) {
+    res.render(`projects/${req.params.page}`, { activeEl: 'projects' });
+});
+
 router.get('/portfolio', function (req, res) {
     res.render('portfolio', { activeEl: 'portfolio' });
 });

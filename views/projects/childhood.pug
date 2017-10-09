@@ -1,0 +1,33 @@
+extends ../layout.pug
+
+
+block title
+    - var title = __('projects.childhood.title')
+    = title
+    |  | Conor Nickerson
+
+block css
+    link(rel='stylesheet', type='text/css', href='/css/project.css')
+
+block content
+    block variables
+    .container.fade
+        h1= title
+        p.description #{__('projects.childhood.description')}
+    section
+        -
+            var images = [
+            '/images/projects/childhood/Apple_Orchard.jpg',
+            '/images/projects/childhood/Birthday.jpg',
+            '/images/projects/childhood/Cake.jpg',
+            '/images/projects/childhood/Floor_Christmas.jpg',
+            '/images/projects/childhood/Guitar.jpg',
+            '/images/projects/childhood/Kitchen_Chairs.jpg',
+            '/images/projects/childhood/Lawn_Chairs.jpg',
+            '/images/projects/childhood/Lawn.jpg',
+            '/images/projects/childhood/Rock_Wall.jpg',
+            '/images/projects/childhood/Suits.jpg',
+            '/images/projects/childhood/Train.jpg'
+            ];
+        each image in images
+            img(src=image)

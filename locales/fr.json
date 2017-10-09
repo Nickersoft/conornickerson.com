@@ -7,8 +7,8 @@
 		"home": "Home",
 		"about": "À Propos",
 		"projects": "Projets",
-		"portfolio": "Portfolio",
-		"videos": "Videos",
+		"portfolio": "Portefeuille",
+		"videos": "Vidéos",
 		"connect": "Connectez"
 	},
 	"about": {
@@ -19,12 +19,15 @@
 	"projects": {
 		"title": "Projets",
 		"colorized_history": "Colorization",
-		"childhood": "Childhood",
+		"childhood": {
+			"title": "Enfance",
+			"description": "Moi-même en train de sortir avec moi-même, vers 1997-2005"
+		},
 		"coming_soon": "Prochainement",
 		"then_and_now": "Then & Now"
 	},
 	"portfolio": {
-		"title": "Portfolio",
+		"title": "Portefeuille",
 		"portraits": "Portraits",
 		"music": "Musique",
 		"city": "Cité",
