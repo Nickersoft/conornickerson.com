@@ -7,13 +7,45 @@ block title
     |  | Conor Nickerson
 
 block css
-    link(rel='stylesheet', type='text/css', href='/css/project.css')
+    link(rel='stylesheet', type='text/css', href='/css/project.childhood.css')
 
 block content
     block variables
+    -
+        var sites = [
+        {
+            image: 'cbc',
+            link: 'http://www.cbc.ca/news/canada/montreal/conor-nickerson-childhood-photo-montreal-1.4354677'
+        },
+        {
+            image: 'cbs',
+            link: 'http://newyork.cbslocal.com/2017/10/13/20-year-old-photoshops-himself-into-childhood-memories/'
+        },
+        {
+            image: 'today',
+            link: 'https://www.today.com/parents/photographer-edits-his-adult-self-childhood-photographs-t117733'
+        },
+        {
+            image: 'yahoo',
+            link: 'https://www.yahoo.com/news/myself-hanging-myself-photographer-edits-slideshow-wp-110522472/photo-p-o-span-nce-got-photo-110522742.html'
+        },
+        {
+            image: 'bi',
+            link: 'http://www.businessinsider.com/stunning-photoshop-childhood-photos-2017-10'
+        },
+        {
+            image: 'mashable',
+            link: 'http://mashable.com/2017/10/13/photographer-photoshops-childhood-photos/'
+        }
+        ];
     .container.fade
         h1= title
         p.description #{__('projects.childhood.description')}
+        p.featured= __('projects.childhood.featured')
+        .logos
+            each site in sites
+                a(href=site.link target='#blank')
+                    img(src='/images/logos/' + site.image + '.svg')
     section
         -
             var images = [
