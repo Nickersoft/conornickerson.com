@@ -14,7 +14,7 @@
 	},
 	"about": {
 		"button": "Connect with Conor",
-		"content": "<p> Conor Nickerson is an American photographer and musician based in Montreal, an originally from Massachusetts. As a photographer, Conor does freelance work as well as independent projects. His project <a href=\"http://conornickerson.wixsite.com/site/then-now\" target=\"_blank\">Then & Now (2016) </a>  was published around Montreal, and his introspective series <a href=\"https://conornickerson.com/en/projects/childhood\"> Childhood (2017) </a> garnered international attention, being shared around the world. Experienced in historical colorization, post production and photo editing, Conor is practiced in Adobe Lightroom and Photoshop as well as the development of film. An amature videographer, Conor works recording videos for musicians, producing music videos, short films and sketches. </p> <p> As a musician, Conor is studied in both classical and jazz. A multi-instrumentalist, he plays a mélange of genres and composes his own music. </p> <p> Conor is completing his Undergraduate Degree as a jazz saxophonist at the renowned <a href=\"http://www.mcgill.ca/music/\" target=\"_blank\">Schulich School of Music </a> at <a href=\"http://www.mcgill.ca/\" target=\"_blank\"> McGill University </a>. </p>",
+		"content": "<p> Conor Nickerson is an American photographer and musician based in Montreal, originally from Massachusetts. As a photographer, Conor does freelance work as well as independent projects. His project <a href=\"http://conornickerson.wixsite.com/site/then-now\" target=\"_blank\">Then & Now (2016) </a>  was published around Montreal, and his introspective series <a href=\"https://conornickerson.com/en/projects/childhood\"> Childhood (2017) </a> garnered international attention, being shared around the world. Experienced in historical colorization, post production and photo editing, Conor is practiced in Adobe Lightroom and Photoshop as well as the development of film. An amature videographer, Conor works recording videos for musicians, producing music videos, short films and sketches. </p> <p> As a musician, Conor is studied in both classical and jazz. A multi-instrumentalist, he plays a mélange of genres and composes his own music. </p> <p> Conor is completing his Undergraduate Degree as a jazz saxophonist at the renowned <a href=\"http://www.mcgill.ca/music/\" target=\"_blank\">Schulich School of Music </a> at <a href=\"http://www.mcgill.ca/\" target=\"_blank\"> McGill University </a>. </p>",
 		"title": "About"
 	},
 	"projects": {
@@ -33,7 +33,8 @@
 		"portraits": "Portraits",
 		"music": "Music",
 		"city": "City",
-		"rural": "Rural"
+		"rural": "Rural",
+		"other": "Other Work"
 	},
 	"connect": {
 		"title": "Connect with Conor"

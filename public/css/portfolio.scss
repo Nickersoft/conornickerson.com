@@ -54,6 +54,12 @@ section {
     background-position: center 55%;
   }
 
+  &.other {
+    background-image: url('../images/banner/other.jpg');
+    background-position: center 30%;
+    width: 100%;
+  }
+
   &:hover {
     opacity: 0.75;
   }

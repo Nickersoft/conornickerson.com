@@ -32,7 +32,8 @@
 		"portraits": "Portraits",
 		"music": "Musique",
 		"city": "Cité",
-		"rural": "Campagne"
+		"rural": "Campagne",
+		"other": "Projets Supplémentaires"
 	},
 	"connect": {
 		"title": "Connectez avec Conor"
