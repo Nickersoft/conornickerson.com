@@ -11,14 +11,14 @@
   "author": "Tyler Nickerson",
   "license": "ISC",
   "dependencies": {
-    "bourbon": "^4.3.4",
+    "bourbon": "^5.0.0",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.4",
-    "harp": "^0.24.0",
+    "express": "^4.16.2",
+    "harp": "^0.25.0",
     "i18n": "^0.8.3",
     "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.14.11"
   }
 }
