@@ -83,6 +83,6 @@ app.use('/fr', function(req, res, next) {
 
 /*** START SERVER ***/
 
-app.listen(8888, function () {
+app.listen(process.env.PORT || 8888, function () {
     console.log('Server listening on port 8888!');
 });

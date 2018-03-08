@@ -12,4 +12,4 @@ RUN yarn install
 WORKDIR /server
 
 EXPOSE 8888
-ENTRYPOINT ["npm", "start"]
+CMD npm start
