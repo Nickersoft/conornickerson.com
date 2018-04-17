@@ -13,7 +13,7 @@
 	},
 	"about": {
 		"button": "Connectez avec Conor",
-		"content": "<p> Conor Nickerson est un photographe et musicien américain actuellement à Montréal, originaire du Massachusetts aux ÉU. Comme un photographe, Conor travail en freelance et il fait des projets indépendants. Son projet <a href=\"http://conornickerson.wixsite.com/site/then-now\" target=\"_blank\">Then & Now (2016) </a> était partagé à Montreal, et sa série introspective <a href=\"https://conornickerson.com/en/projects/childhood\"> Childhood (2017) </a> a attiré l’attention internationale. Avec l'expérience avec l’ajoute de couleurs aux photographes historiques, le post-production, et l’édition de photos, Conor est pratiqué en Adobe Lightroom et Photoshop et le développement de film. Comme vidéaste amateur, Conor travaille faisant des vidéos pour les musiciens, les courts métrages, et les sketches. </p> <p>  Comme musicien, il est formé en classique et en jazz. En multi-instrumentaliste, Conor joue un mélange de genres et il compose. Jouant la guitare, le saxophone, le piano, le harmonium, la contrebasse, la batterie, les vocales, et d’autre pour ses enregistrements, c’est un musicien autosuffisant. </p> <p> Conor finis son Diplôme de premier cycle comme saxophoniste jazz au renommé <a href=\"http://www.mcgill.ca/music/\" target=\"_blank\">École de Musique Schulich </a> à <a href=\"http://www.mcgill.ca/\" target=\"_blank\">l’Université McGill</a>. </p>",
+		"content": "<p> Conor Nickerson est un photographe et musicien actuellement à Montréal, originaire du Massachusetts aux ÉU. Comme un photographe, Conor travail en freelance dans les portraits et la musique live, et il fait les projets indépendants. Son projet <a href=\"http://conornickerson.wixsite.com/site/then-now\" target=\"_blank\">Then & Now (2016) </a> était partagé à Montreal, et sa série introspective <a href=\"https://conornickerson.com/en/projects/childhood\" target=\"_blank\"> Childhood (2017) </a> a attiré l’attention internationale. Avec l'expérience avec l’ajoute de couleurs aux photographes historiques, le post-production, et l’édition de photos, Conor est pratiqué en Adobe Lightroom et Photoshop et le développement de film. Comme vidéaste amateur, Conor travaille faisant des vidéos pour les musiciens et d’autres petites vidéos. </p> <p>  Comme musicien, il est formé en classique et en jazz. En multi-instrumentaliste, Conor joue un mélange de genres et il compose. </p> <p> Conor finis son Diplôme de premier cycle comme saxophoniste jazz à <a href=\"http://www.mcgill.ca/music/\" target=\"_blank\">l’École de Musique Schulich </a> à <a href=\"http://www.mcgill.ca/\" target=\"_blank\">l’Université McGill</a>. </p>",
 		"title": "À Propos"
 	},
 	"projects": {
@@ -38,5 +38,5 @@
 	"connect": {
 		"title": "Connectez avec Conor"
 	},
-	"footer": "&copy; 2017 Conor Nickerson. Site conçu par <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>"
+	"footer": "&copy; 2018 Conor Nickerson. Site conçu par <a href=\"https://tylernickerson.com\" target=\"_blank\">Tyler Nickerson</a>"
 }
