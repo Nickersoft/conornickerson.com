@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@import "bourbon/core/_bourbon";
+
+#___gatsby,
+#___gatsby > * {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Questrial', sans-serif;
+  position: relative;
+  font-size: 15px;
+
+  main {
+    height: calc(100% - 30px - 1em);
+    max-height: calc(100% - 30px - 1em);
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+
+    .fade {
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .button {
+      transition: background-color 0.5s ease-in-out;
+      background-color: #e74c3c;
+      border-radius: 100px;
+      color: #fff;
+      padding: 15px 35px;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #FF6756;
+    }
+
+    p {
+      color: #666;
+      display: block;
+      line-height: 1.8em;
+      margin: 15px auto;
+    }
+
+    h1, h2 {
+      color: #333;
+      font-size: 2.5em;
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 75px 0 10px;
+
+      a,
+      a:active,
+      a:visited {
+        color: #333;
+      }
+
+      span {
+        color: #888;
+        font-size: 0.7em;
+        letter-spacing: 4px;
+
+        a,
+        a:active,
+        a:visited {
+          color: #888;
+        }
+      }
+    }
+
+    h2 {
+      color: #666;
+      font-size: 2em;
+      font-weight: 300;
+      margin-bottom: 10px;
+
+      a,
+      a:active,
+      a:visited {
+        color: #666;
+      }
+    }
+
+    h3 {
+      color: #555;
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-bottom: 0px;
+
+      a,
+      a:active,
+      a:visited {
+        color: #555;
+      }
+    }
+
+    a {
+      color: #e74c3c;
+      text-decoration: none;
+    }
+
+    .quote {
+      font-style: italic;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      text-align: center;
+      width: 50%;
+
+      p {
+        color: #888;
+      }
+
+      span {
+        color: #666;
+        display: block;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @media (max-width: 1200px) {
+        width: 90%;
+      }
+    }
+
+    .social {
+      list-style: none;
+      margin: 0;
+      margin-bottom: 50px;
+      padding: 0;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-right: 25px;
+
+        a {
+          transition: color 0.25s ease-in-out;
+          color: #666;
+          cursor: pointer;
+
+          &:hover {
+            color: #444;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      padding: 0 25px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+  }
+}
