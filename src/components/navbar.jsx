@@ -42,26 +42,7 @@ const NavigationLink = styled(Link)`
   &:hover {
     color: #fff;
   }
-`
-
-// nav ul {
-
-
-//   & > li {
-//     & > a {
-
-
-//     }
-
-//     &.active > a {
-//       color: #fff;
-
-//       &:hover {
-//         color: #fff;
-//       }
-//     }
-//   }
-// }
+`;
 
 const Hamburger = styled.div`
   display: none;
@@ -79,27 +60,61 @@ const HamburgerIcon = styled.span`
   color: #fff;
 `;
 
+const Credits = styled.span`
+  color: #aaa;
+  display: block;
+  font-size: 0.8em;
+  margin: 25px 0;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #ccc;
+  }
+`;
+
 const getLinkForPage = (page, location) => {
   var type = page.__typename.replace('Contentful', '').toLowerCase();
   var url = `/${type === 'homepage' ? '' : type}`;
-  var active = false;
-
-  if (location) {
-    var { pathname } = location;
-    active = pathname === url;
-  }
 
   return {
     url,
-    active,
+    external: false,
     key: type,
     text: page.pageName
   };
 }
 
+const determineCurrent = ({ location, href }) => {
+  const linkPath = location.pathname.replace(/\//g, '');
+  const currentPath = href.replace(/\//g, '');
+console.log(currentPath, linkPath);
+  return (currentPath === linkPath) ? { style: { color: '#fff' } } : null;
+}
+
 const makeContent = (location) => (data) => {
   const content = data[process.env.LOCALE || 'en'];
+  const { footer: { childMarkdownRemark: { html: credits } } } = content;
   const links = content.pages.map(getLinkForPage, location);
+  const insertAfterIndex = content.pages.map(x => x.__typename).indexOf(content.insertLinksAfter.__typename);
+  
+  const externalLinks = content.externalLinks.map(({ text, url }) => ({
+    url: encodeURIComponent(`out?url=${url}`),
+    text,
+    external: true,
+    key: url
+  }));
+  
+  if (insertAfterIndex >= 0) {
+    links.splice(
+      insertAfterIndex + 1,
+      0,
+      ...externalLinks
+    );
+  }
 
   return (
     <Footer>
@@ -109,13 +124,15 @@ const makeContent = (location) => (data) => {
           </HamburgerIcon>
         </Hamburger>
         <Navigation>
-          { links.map(link => (
+          {links.map(link => (
             <NavigationItem key={link.key}>
-              <NavigationLink to={link.url}>
-                { link.text }
+              <NavigationLink to={link.url} getProps={determineCurrent}>
+                {link.text}
               </NavigationLink>
-            </NavigationItem>)) }
+            </NavigationItem>))}
         </Navigation>
+        <Credits dangerouslySetInnerHTML={{ __html: credits }}>
+        </Credits>
       </Container>
     </Footer>
   );
@@ -130,6 +147,11 @@ const NavBar = ({ location }) => (
       }
       fragment NavbarFragment on ContentfulNavbar {
         name
+        footer {
+          childMarkdownRemark {
+            html
+          }
+        }
         pages {
           ...on ContentfulHomepage { pageName },
           ...on ContentfulAbout { pageName },

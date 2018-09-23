@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout'
@@ -20,12 +20,16 @@ const Sidebar = styled.div`
 const HeaderArea = styled.div`
   margin-top: 50%;
   transform: translateY(-25%);
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const Header = styled.h1`
   color: #FFF;
   letter-spacing: 0;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   padding: 0 10px;
   margin-top: 10px;
 
@@ -37,7 +41,7 @@ const Header = styled.h1`
 const Subheader = styled.h2`
   color: #FFF;
   display: block;
-  font-size: 2rem;
+  font-size: 1.75rem;
   letter-spacing: 0;
   margin: 10px 0 100px;
   padding: 0;
@@ -71,26 +75,65 @@ const CoverImage = styled.img`
   transform: translateX(-50%) translateY(-50%);
 `;
 
+const Languages = styled.div`
+  display: block;
+  text-align: center;
+`;
+
+const Language = styled(Link)`
+  transition: opacity 0.5s ease-in-out;
+  border-right: 1px solid #fff;
+  background-size: cover;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 0 12px;
+  text-transform: uppercase;
+  opacity: 0.5;
+
+  &.active {
+    opacity: 1.0;
+  }
+
+  &:not(.active):hover {
+    opacity: 0.75;
+  }
+
+  &:last-child {
+    border: none;
+    padding-right: 0;
+  }
+`;
+
 const LandingPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
   const { 
     titleLine1, 
     titleLine2, 
+    logo: {
+      fluid: logo
+    },
     coverImage: { 
       fluid: image 
-    } 
+    }
   } = content;
 
   return (
     <Layout location={location}>
       <Sidebar>
         <HeaderArea>
+          <Logo srcSet={logo.srcSet} />
           <Header>
             { titleLine1 }
           </Header>
           <Subheader>
             { titleLine2 }
           </Subheader>
+          <Languages>
+            <Language className={ process.env.LOCALE === 'en' ? 'active' : ''} to="../en">EN</Language>
+            <Language className={ process.env.LOCALE === 'fr' ? 'active' : ''} to="../fr">FR</Language>
+          </Languages>
         </HeaderArea>
       </Sidebar>
       <CoverImageContainer>
@@ -109,12 +152,17 @@ export const query = graphql`
     pageName
     titleLine1
     titleLine2
+    logo {
+      fluid {
+        ...GatsbyContentfulFluid_noBase64
+      }
+    }
     coverImage {
       fluid {
         ...GatsbyContentfulFluid_noBase64
       }
     }
   }
-`
+`;
 
 export default LandingPage
