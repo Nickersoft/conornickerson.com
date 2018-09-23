@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const webpack = require('webpack');
 
-// You can delete this file if you're not using it
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.define({
+        'process.env': {
+          LOCALE: JSON.stringify(process.env.LOCALE || 'en')
+        }
+      })
+    ]
+  })
+}

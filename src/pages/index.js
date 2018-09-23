@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout'
@@ -52,7 +53,6 @@ const Logo = styled.img`
 `;
 
 const CoverImageContainer = styled.div`
-  background: red;
   display: inline-block;
   width: calc(100% - 450px);
   vertical-align: top;
@@ -67,15 +67,20 @@ const CoverImage = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
+  min-width: 990px;
   transform: translateX(-50%) translateY(-50%);
 `;
 
 const LandingPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
-  
-  const { titleLine1, titleLine2, coverImage: { fluid: image } } = content;
+  const { 
+    titleLine1, 
+    titleLine2, 
+    coverImage: { 
+      fluid: image 
+    } 
+  } = content;
 
-  console.log(image);
   return (
     <Layout location={location}>
       <Sidebar>

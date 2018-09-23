@@ -22,14 +22,15 @@ html, body {
 }
 
 body {
-  background: #fafafa;
+  background: #242424;
   font-family: 'Questrial', sans-serif;
   position: relative;
   font-size: 15px;
 
   main {
+    background: #fafafa;
     height: calc(100% - 30px - 1em);
-    max-height: calc(100% - 30px - 1em);
+    max-height: calc(100% - 32px - 1em);
     display: block;
     overflow-y: scroll;
     overflow-x: hidden;
