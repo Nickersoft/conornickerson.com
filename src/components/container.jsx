@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.div`
+const Container = styled.div`
   display: block;
   margin: 0 auto;
   overflow: auto;
@@ -10,3 +10,5 @@ export default styled.div`
       width: 100%;
   }
 `;
+
+export default Container;

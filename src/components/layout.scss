@@ -22,103 +22,85 @@ html, body {
 }
 
 body {
-  background: #242424;
+  background: #fafafa;
   font-family: 'Questrial', sans-serif;
   position: relative;
   font-size: 15px;
 
-  main {
-    background: #fafafa;
-    height: calc(100% - 30px - 1em);
-    max-height: calc(100% - 32px - 1em);
+  p {
+    color: #666;
     display: block;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: relative;
+    line-height: 1.8em;
+    margin: 15px auto;
+  }
 
+  h1, h2 {
+    color: #333;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 75px 0 10px;
+
+    a,
+    a:active,
+    a:visited {
+      color: #333;
+    }
+
+    span {
+      color: #888;
+      font-size: 0.7em;
+      letter-spacing: 4px;
+
+      a,
+      a:active,
+      a:visited {
+        color: #888;
+      }
+    }
+  }
+
+  h2 {
+    color: #666;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+
+    a,
+    a:active,
+    a:visited {
+      color: #666;
+    }
+  }
+
+  h3 {
+    color: #555;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 0px;
+
+    a,
+    a:active,
+    a:visited {
+      color: #555;
+    }
+  }
+
+  a {
+    color: #e74c3c;
+    text-decoration: none;
+  }
+
+  main {
     .fade {
       transition: opacity 1s ease-in-out;
       opacity: 0;
     }
 
-    .button {
-      transition: background-color 0.5s ease-in-out;
-      background-color: #e74c3c;
-      border-radius: 100px;
-      color: #fff;
-      padding: 15px 35px;
-      text-decoration: none;
-    }
 
-    .button:hover {
-      background-color: #FF6756;
-    }
 
-    p {
-      color: #666;
-      display: block;
-      line-height: 1.8em;
-      margin: 15px auto;
-    }
-
-    h1, h2 {
-      color: #333;
-      font-size: 2.5em;
-      font-weight: 300;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 75px 0 10px;
-
-      a,
-      a:active,
-      a:visited {
-        color: #333;
-      }
-
-      span {
-        color: #888;
-        font-size: 0.7em;
-        letter-spacing: 4px;
-
-        a,
-        a:active,
-        a:visited {
-          color: #888;
-        }
-      }
-    }
-
-    h2 {
-      color: #666;
-      font-size: 2em;
-      font-weight: 300;
-      margin-bottom: 10px;
-
-      a,
-      a:active,
-      a:visited {
-        color: #666;
-      }
-    }
-
-    h3 {
-      color: #555;
-      font-size: 1.5em;
-      font-weight: 400;
-      margin-bottom: 0px;
-
-      a,
-      a:active,
-      a:visited {
-        color: #555;
-      }
-    }
-
-    a {
-      color: #e74c3c;
-      text-decoration: none;
-    }
 
     .quote {
       font-style: italic;

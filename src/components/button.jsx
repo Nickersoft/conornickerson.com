@@ -8,6 +8,10 @@ const Button = styled(Link)`
   color: #fff;
   padding: 15px 35px;
   text-decoration: none;
+
+  &:hover {
+    background-color: #FF6756;
+  }
 `;
 
 export default Button;
