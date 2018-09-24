@@ -5,8 +5,14 @@ import SectionDisplay from '../components/section-display';
 
 const ProjectsPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
-  const { title, projects, socialIcons } = content;
+  
+  let { title, projects, socialIcons } = content;
 
+  projects = projects.map(project => ({
+    ...project,
+    link: project.link || `/projects/${project.title.toLowerCase().replace(' ', '-')}`
+  }));
+  
   return <SectionDisplay
     title={title}
     location={location}

@@ -91,7 +91,6 @@ const getLinkForPage = (page, location) => {
 const determineCurrent = ({ location, href }) => {
   const linkPath = location.pathname.replace(/\//g, '');
   const currentPath = href.replace(/\//g, '');
-console.log(currentPath, linkPath);
   return (currentPath === linkPath) ? { style: { color: '#fff' } } : null;
 }
 

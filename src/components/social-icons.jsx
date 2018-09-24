@@ -1,8 +1,6 @@
 import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import styled from 'styled-components';
-
-import Container from './container';
 
 const SocialList = styled.ul`
   list-style: none;
