@@ -19,10 +19,10 @@ const Header = styled.h1`
 
 const ConnectPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
-  const { title, socialIcons } = content;
+  const { title, pageName, socialIcons } = content;
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={pageName}>
       <Container>
         <Connect>
           <Header>

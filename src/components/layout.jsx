@@ -26,34 +26,39 @@ const Main = styled.main`
     }
   }
 `;
-const Layout = ({ children, location }) => (
+const Layout = ({ children, pageName, location }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+      query {
+        en: contentfulMetadata(node_locale: { eq: "en-US" }) { ...MetadataFragment }
+        fr: contentfulMetadata(node_locale: { eq: "fr" }) { ...MetadataFragment }
+      }
+      fragment MetadataFragment on ContentfulMetadata {
+        siteName
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Main>
-          {children}
-        </Main>
-        <NavBar location={location} />
-      </>
-    )}
+    render={data => {
+      const content = data[process.env.LOCALE || 'en'];
+      const { siteName, description, keywords } = content;
+
+      return (
+        <>
+          <Helmet
+            title={`${pageName} | ${siteName}`}
+            meta={[
+              { name: 'description', content: description },
+              { name: 'keywords', content: keywords },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Main>
+            {children}
+          </Main>
+          <NavBar location={location} />
+        </>
+      )
+    }}
   />
 )
 

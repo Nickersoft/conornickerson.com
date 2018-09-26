@@ -1,22 +1,19 @@
-const BUILD_LOCALE = process.env.LOCALE ? process.env.LOCALE : 'en';
+const locale = process.env.LOCALE || 'en';
 
 module.exports = {
-  pathPrefix: BUILD_LOCALE,
-  siteMetadata: {
-    title: 'Gatsby Default Starter',
-  },
+  pathPrefix: locale,
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'conornickerson.com',
+        short_name: 'conor',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/favicon.png'
       },
     },
     `gatsby-plugin-sharp`,

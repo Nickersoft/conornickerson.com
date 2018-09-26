@@ -41,6 +41,7 @@ const ConnectButton = styled(Button)`
 const AboutPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
   const {
+    pageName,
     title,
     description: {
       childMarkdownRemark: {
@@ -52,7 +53,7 @@ const AboutPage = ({ data, location }) => {
   } = content;
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={pageName}>
       <Container>
         <About>
           <Header>

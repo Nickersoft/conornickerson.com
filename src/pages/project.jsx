@@ -52,12 +52,13 @@ const FeaturedLogo = styled.img`
 `;
 
 const ProjectPage = ({ location, pageContext }) => {
-  const { title, tagline, articlesHeader, articles } = pageContext;
+  const { title, tagline, articlesHeader } = pageContext;
   
   const images = pageContext.images || [];
+  const articles = pageContext.articles || [];
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={title}>
       <Container>
         <Header>
           { title }

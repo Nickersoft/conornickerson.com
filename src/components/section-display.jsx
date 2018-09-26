@@ -81,7 +81,7 @@ const makeSection = (section, index, sections) => {
 
 const SectionsPage = ({ title, socialIcons, sections, location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={title}>
       <SectionContainer>
         <Header>
           { title }

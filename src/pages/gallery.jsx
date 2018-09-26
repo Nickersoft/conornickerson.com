@@ -53,7 +53,7 @@ const GalleryPage = ({ location, pageContext }) => {
   const images = pageContext.images || [];
   
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={title}>
       <Container>
         <Header>
           { title }

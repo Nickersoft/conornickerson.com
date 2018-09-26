@@ -109,6 +109,7 @@ const Language = styled(Link)`
 const LandingPage = ({ data, location }) => {
   const content = data[process.env.LOCALE || 'en'];
   const { 
+    pageName,
     titleLine1, 
     titleLine2, 
     logo: {
@@ -120,7 +121,7 @@ const LandingPage = ({ data, location }) => {
   } = content;
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName={pageName}>
       <Sidebar>
         <HeaderArea>
           <Logo srcSet={logo.srcSet} />
@@ -131,8 +132,12 @@ const LandingPage = ({ data, location }) => {
             { titleLine2 }
           </Subheader>
           <Languages>
-            <Language className={ process.env.LOCALE === 'en' ? 'active' : ''} to="../en">EN</Language>
-            <Language className={ process.env.LOCALE === 'fr' ? 'active' : ''} to="../fr">FR</Language>
+            <Language className={ process.env.LOCALE === 'en' ? 'active' : ''} to="../en">
+              EN
+            </Language>
+            <Language className={ process.env.LOCALE === 'fr' ? 'active' : ''} to="../fr">
+              FR
+            </Language>
           </Languages>
         </HeaderArea>
       </Sidebar>

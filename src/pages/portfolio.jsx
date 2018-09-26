@@ -27,10 +27,12 @@ const PortfolioPage = ({ data, location }) => {
 }
 
 export const query = graphql`
+  
   query {
     en: contentfulPortfolio(node_locale: { eq: "en-US" }) { ...PortfolioPageFragment }
     fr: contentfulPortfolio(node_locale: { eq: "fr" }) { ...PortfolioPageFragment }
   }
+
   fragment PortfolioPageFragment on ContentfulPortfolio {
     title,
     otherWorkTitle
