@@ -1,6 +1,3 @@
-
-# Created by https://www.gitignore.io/api/osx,windows,linux,node,webstorm
-
 ### Linux ###
 *~
 
@@ -194,7 +191,7 @@ $RECYCLE.BIN/
 node_modules
 yarn-error.log
 
-# Build directory
+# Build directories
 /public
-.DS_Store
+/dist
 
