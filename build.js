@@ -12,13 +12,13 @@ shell.mkdir('-p', 'dist/fr', 'dist/en');
 
 runGatsby('en');
 
-shell.cp('-a', './public/.', './dist/en');
+shell.cp('-r', './public/.', './dist/en');
 
 console.log('\n🇫🇷 Building French site...\n');
 
 runGatsby('fr');
 
-shell.cp('-a', './public/.', './dist/fr');
+shell.cp('-r', './public/.', './dist/fr');
 
 console.log('\n🗑 Cleaning up...\n');
 
