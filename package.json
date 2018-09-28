@@ -31,6 +31,7 @@
   "license": "MIT",
   "scripts": {
     "build": "node build.js",
+    "clean": "rm -rf .cache public dist",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"

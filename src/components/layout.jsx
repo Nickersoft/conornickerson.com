@@ -26,6 +26,7 @@ const Main = styled.main`
     }
   }
 `;
+
 const Layout = ({ children, pageName, location }) => (
   <StaticQuery
     query={graphql`

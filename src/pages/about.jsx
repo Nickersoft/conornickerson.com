@@ -13,11 +13,11 @@ const About = styled.div`
   text-align: center;
   width: 400px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     transform: none;
     margin-top: 25px;
     margin-bottom: 100px;
-    padding: 0 10px;
+    padding: 0 2rem;
     position: relative;
     top: 0;
     left: 0;

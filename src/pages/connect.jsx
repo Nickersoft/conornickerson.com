@@ -11,6 +11,10 @@ const Connect = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const Header = styled.h1`

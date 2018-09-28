@@ -94,14 +94,6 @@ body {
   }
 
   main {
-    .fade {
-      transition: opacity 1s ease-in-out;
-      opacity: 0;
-    }
-
-
-
-
     .quote {
       font-style: italic;
       overflow: hidden;
@@ -123,38 +115,6 @@ body {
       @media (max-width: 1200px) {
         width: 90%;
       }
-    }
-
-    .social {
-      list-style: none;
-      margin: 0;
-      margin-bottom: 50px;
-      padding: 0;
-      text-align: center;
-
-      li {
-        display: inline-block;
-        font-size: 1.5em;
-        margin-right: 25px;
-
-        a {
-          transition: color 0.25s ease-in-out;
-          color: #666;
-          cursor: pointer;
-
-          &:hover {
-            color: #444;
-          }
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-
-    @media (max-width: 1200px) {
-      padding: 0 25px;
     }
   }
 

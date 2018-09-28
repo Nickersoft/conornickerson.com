@@ -36,6 +36,10 @@ const Section = styled.section`
   &:nth-child(odd) {
     float: right;
   }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const SectionLink = styled(Link)`
@@ -45,9 +49,13 @@ const SectionLink = styled(Link)`
   font-weight: 300;
   letter-spacing: 6px;
   margin-top: 10px;
-  padding: 90px 0;
+  padding: 5rem 0;
   z-index: 999;
   position: relative;
+
+  @media (max-width: 500px) {
+    padding: 3rem;
+  }
 `;
 
 const SectionBackground = styled.img`
