@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "conornickerson.com",
+  "description": "Conor Nickerson's homepage",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Tyler Nickerson <nickersoft@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.7.1",
     "bourbon": "^5.1.0",
