@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import Lightbox from 'react-images'
 
-import Layout from '../components/layout';
-import Container from '../components/container';
+import Layout from '../components/layout'
+import Container from '../components/container'
 
 const Header = styled.h1`
   margin-bottom: 45px;
@@ -10,7 +11,7 @@ const Header = styled.h1`
   @media (max-width: 800px) {
     font-size: 1.8em;
   }
-`;
+`
 
 const PhotosContainer = styled.section`
   text-align: center;
@@ -18,7 +19,7 @@ const PhotosContainer = styled.section`
   &:last-child {
     margin-bottom: 25px;
   }
-`;
+`
 
 const Photos = styled.div`
   column-gap: 0;
@@ -34,7 +35,7 @@ const Photos = styled.div`
   @media (max-width: 400px) {
     column-count: 1;
   }
-`;
+`
 
 const Photo = styled.img`
   transition: opacity 0.25s ease-in-out;
@@ -45,31 +46,78 @@ const Photo = styled.img`
   &:hover {
     opacity: 0.5;
   }
-`;
+`
 
-const GalleryPage = ({ location, pageContext }) => {
-  const { title } = pageContext;
+class GalleryPage extends Component {
+  state = {
+    lightboxOpen: false,
+    activeImageIndex: 0,
+  }
 
-  const images = pageContext.images || [];
-  
-  return (
-    <Layout location={location} pageName={title}>
-      <Container>
-        <Header>
-          { title }
-        </Header>
-        <PhotosContainer>
-          <Photos>
-            { 
-              images.map(({ fluid: image }) => (
-                <Photo key={image.src} src={image.src} srcSet={image.srcSet} />
-              ))
-            }
-          </Photos>
-        </PhotosContainer>
-      </Container>
-    </Layout>
-  );
+  openLightbox = index => () => {
+    this.setState({
+      lightboxOpen: true,
+      activeImageIndex: index,
+    })
+  }
+
+  goToPreviousImage() {
+    this.setState({
+      activeImageIndex: this.state.activeImageIndex - 1,
+    })
+  }
+
+  goToNextImage() {
+    this.setState({
+      activeImageIndex: this.state.activeImageIndex + 1,
+    })
+  }
+
+  closeLightbox() {
+    this.setState({
+      lightboxOpen: false,
+    })
+  }
+
+  render() {
+    const { location, pageContext } = this.props
+    const { lightboxOpen, activeImageIndex } = this.state
+    const { title } = pageContext
+
+    const images = pageContext.images || []
+    const imageURLs = images.map(x => x.src)
+
+    return (
+      <Layout location={location} pageName={title}>
+        <Container>
+          <Header>{title}</Header>
+          <PhotosContainer>
+            <Photos>
+              {images.map(({ fluid: image }, index) => (
+                <Photo
+                  onClick={this.openLightbox(index)}
+                  key={image.src}
+                  src={image.src}
+                  srcSet={image.srcSet}
+                />
+              ))}
+            </Photos>
+          </PhotosContainer>
+        </Container>
+        {lightboxOpen && (
+          <Lightbox
+            images={images.map(x => x.fluid)}
+            isOpen={lightboxOpen}
+            backdropClosesModal={true}
+            currentImage={activeImageIndex}
+            onClickPrev={this.goToPreviousImage.bind(this)}
+            onClickNext={this.goToNextImage.bind(this)}
+            onClose={this.closeLightbox.bind(this)}
+          />
+        )}
+      </Layout>
+    )
+  }
 }
 
-export default GalleryPage;
+export default GalleryPage
