@@ -80,7 +80,7 @@ const Languages = styled.div`
   text-align: center;
 `;
 
-const Language = styled(Link)`
+const Language = styled.a`
   transition: opacity 0.5s ease-in-out;
   border-right: 1px solid #fff;
   background-size: cover;
@@ -132,10 +132,10 @@ const LandingPage = ({ data, location }) => {
             { titleLine2 }
           </Subheader>
           <Languages>
-            <Language className={ process.env.LOCALE === 'en' ? 'active' : ''} to="../en">
+            <Language className={ process.env.LOCALE === 'en' ? 'active' : ''} href="/en">
               EN
             </Language>
-            <Language className={ process.env.LOCALE === 'fr' ? 'active' : ''} to="../fr">
+            <Language className={ process.env.LOCALE === 'fr' ? 'active' : ''} href="/fr">
               FR
             </Language>
           </Languages>
