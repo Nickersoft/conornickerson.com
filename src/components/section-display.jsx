@@ -49,7 +49,7 @@ const SectionLink = styled(Link)`
   font-weight: 300;
   letter-spacing: 6px;
   margin-top: 10px;
-  padding: 5rem 0;
+  padding: 5.6rem 0;
   z-index: 999;
   position: relative;
 
