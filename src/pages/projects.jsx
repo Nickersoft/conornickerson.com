@@ -31,8 +31,8 @@ export const query = graphql`
       title
       link
       coverImage {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
+        file {
+          url
         }
       }
     }

@@ -56,23 +56,15 @@ const Logo = styled.img`
   width: 100%;
 `;
 
-const CoverImageContainer = styled.div`
+const CoverImage = styled.div`
   display: inline-block;
   width: calc(100% - 450px);
   vertical-align: top;
   height: 100%;
   overflow: hidden;
   position: relative;
-`;
-
-const CoverImage = styled.img`
-  min-height: 660px;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 990px;
-  transform: translateX(-50%) translateY(-50%);
+  background-position: center;
+  background-size: cover;
 `;
 
 const Languages = styled.div`
@@ -116,7 +108,9 @@ const LandingPage = ({ data, location }) => {
       fluid: logo
     },
     coverImage: { 
-      fluid: image 
+      file: { 
+        url: image 
+      }
     }
   } = content;
 
@@ -141,9 +135,7 @@ const LandingPage = ({ data, location }) => {
           </Languages>
         </HeaderArea>
       </Sidebar>
-      <CoverImageContainer>
-        <CoverImage srcSet={image.srcSet} />
-      </CoverImageContainer>
+      <CoverImage style={{ backgroundImage: `url('${image}')` }} />
     </Layout>
   );
 }
@@ -163,8 +155,8 @@ export const query = graphql`
       }
     }
     coverImage {
-      fluid {
-        ...GatsbyContentfulFluid_noBase64
+      file {
+        url
       }
     }
   }

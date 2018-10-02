@@ -79,8 +79,8 @@ const ProjectPage = ({ location, pageContext }) => {
         </FeaturedLogos>
         <Photos>
           { 
-            images.map(({ fluid: image }) => (
-              <Photo key={image.src} src={image.src} srcSet={image.srcSet} />
+            images.map(({ file: { url: image } }) => (
+              <Photo key={image} src={image} />
             ))
           }
         </Photos>

@@ -93,12 +93,11 @@ class GalleryPage extends Component {
           <Header>{title}</Header>
           <PhotosContainer>
             <Photos>
-              {images.map(({ fluid: image }, index) => (
+              {images.map(({ file: { url: image } }, index) => (
                 <Photo
                   onClick={this.openLightbox(index)}
-                  key={image.src}
-                  src={image.src}
-                  srcSet={image.srcSet}
+                  key={image}
+                  src={image}
                 />
               ))}
             </Photos>
@@ -106,7 +105,7 @@ class GalleryPage extends Component {
         </Container>
         {lightboxOpen && (
           <Lightbox
-            images={images.map(x => x.fluid)}
+            images={images.map(x => ({ src: x.file.url }))}
             isOpen={lightboxOpen}
             backdropClosesModal={true}
             currentImage={activeImageIndex}

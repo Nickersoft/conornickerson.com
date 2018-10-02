@@ -38,15 +38,15 @@ export const query = graphql`
     otherWorkTitle
     otherWorkLink
     otherWorkBackground {
-      fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+      file {
+        url
+      }
     }
     galleries {
       title
       coverImage {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
+        file {
+          url
         }
       }
     }

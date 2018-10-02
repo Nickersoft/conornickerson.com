@@ -67,9 +67,14 @@ const SectionBackground = styled.img`
 `;
 
 const makeSection = (section, index, sections) => {
-  let { title, link, coverImage: { fluid } } = section;
+  let { title, link, coverImage } = section;
+  let image = '';
 
   const additionalStyles = {};
+
+  if (coverImage) {
+    image = coverImage.file.url;
+  }
 
   if (index === sections.length - 1 && sections.length % 2 !== 0) {
     additionalStyles['width'] = '100%';
@@ -82,7 +87,7 @@ const makeSection = (section, index, sections) => {
   return (
     <Section style={additionalStyles} key={link}>
       <SectionLink to={ link }>{ title }</SectionLink>
-      <SectionBackground src={ fluid.src } srcSet={ fluid.srcSet } />
+      <SectionBackground src={ image } />
     </Section>
   );
 };

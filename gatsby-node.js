@@ -57,15 +57,13 @@ const createProjectPages = (graphql, createPage) => {
       link
       articlesHeader
       coverImage {
-        fluid {
-          src
-          srcSet
+        file {
+          url
         }
       }
       images {
-        fluid {
-          src
-          srcSet
+        file {
+          url
         }
       }
       articles {
@@ -107,9 +105,8 @@ const createGalleryPages = (graphql, createPage) => {
     fragment GalleryPageFragment on ContentfulGallery {
       title
       images {
-        fluid {
-          src
-          srcSet
+        file {
+          url
         }
       }
     }
