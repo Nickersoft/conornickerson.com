@@ -85,7 +85,6 @@ class GalleryPage extends Component {
     const { title } = pageContext
 
     const images = pageContext.images || []
-    const imageURLs = images.map(x => x.src)
 
     return (
       <Layout location={location} pageName={title}>
