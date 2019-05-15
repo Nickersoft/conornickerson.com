@@ -164,10 +164,10 @@ class VideosPage extends Component {
     const { location, data } = this.props;
     const content = data[process.env.LOCALE || 'en'];
 
-    let { pageName, title, videos } = content;
-    console.log(data);
+    let { title, videos } = content;
+
     return (
-      <Layout location={location} pageName={pageName}>
+      <Layout location={location} pageName={title}>
         <Container>
           <Header>{title}</Header>
           {videos.map(this.renderVideoBlock)}
@@ -188,7 +188,6 @@ export const query = graphql`
   }
 
   fragment VideosFragment on ContentfulVideos {
-    pageName
     title
     videos {
       title
