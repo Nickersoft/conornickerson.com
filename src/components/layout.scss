@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Questrial");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-@import "bourbon/core/_bourbon";
+@import 'bourbon/core/_bourbon';
 
 #___gatsby,
 #___gatsby > * {
@@ -14,11 +14,16 @@
   -webkit-box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+}
+
+iframe {
+  background: #000;
 }
 
 body {
@@ -34,7 +39,8 @@ body {
     margin: 15px auto;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     color: #333;
     font-size: 2.5em;
     font-weight: 300;
