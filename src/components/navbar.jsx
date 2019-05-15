@@ -107,20 +107,6 @@ class NavBar extends Component {
     return data => {
       const content = data[process.env.LOCALE || 'en']
       const links = content.pages.map(getLinkForPage, location)
-      const insertAfterIndex = content.pages
-        .map(x => x.__typename)
-        .indexOf(content.insertLinksAfter.__typename)
-
-      const externalLinks = content.externalLinks.map(({ text, url }) => ({
-        url: encodeURIComponent(`out?url=${url}`),
-        text,
-        external: true,
-        key: url,
-      }))
-
-      if (insertAfterIndex >= 0) {
-        links.splice(insertAfterIndex + 1, 0, ...externalLinks)
-      }
 
       return (
         <NavBarContainer>
@@ -191,16 +177,12 @@ class NavBar extends Component {
               ... on ContentfulPortfolio {
                 pageName
               }
+              ... on ContentfulVideos {
+                pageName
+              }
               ... on ContentfulConnect {
                 pageName
               }
-            }
-            externalLinks {
-              text
-              url
-            }
-            insertLinksAfter {
-              __typename
             }
           }
         `}
