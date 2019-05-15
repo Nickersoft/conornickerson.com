@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 import Container from '../components/container';
 import SocialIcons from '../components/social-icons';
 
@@ -86,8 +86,8 @@ const makeSection = (section, index, sections) => {
 
   return (
     <Section style={additionalStyles} key={link}>
-      <SectionLink to={ link }>{ title }</SectionLink>
-      <SectionBackground src={ image } />
+      <SectionLink to={link}>{title}</SectionLink>
+      <SectionBackground src={image} />
     </Section>
   );
 };
@@ -96,15 +96,13 @@ const SectionsPage = ({ title, socialIcons, sections, location }) => {
   return (
     <Layout location={location} pageName={title}>
       <SectionContainer>
-        <Header>
-          { title }
-        </Header>
-        <br/>
-        <SocialIcons icons={ socialIcons }></SocialIcons>
+        <Header>{title}</Header>
+        <br />
+        <SocialIcons icons={socialIcons} />
       </SectionContainer>
-      { sections.map((s, i) => makeSection(s, i, sections)) }
+      {sections.map((s, i) => makeSection(s, i, sections))}
     </Layout>
   );
-}
+};
 
 export default SectionsPage;

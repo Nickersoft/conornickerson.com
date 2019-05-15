@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import Container from '../components/container'
+import Layout from '../components/layout';
+import Container from '../components/container';
 
 const Header = styled.h1`
   margin-bottom: 45px;
@@ -12,7 +12,7 @@ const Header = styled.h1`
   @media (max-width: 800px) {
     font-size: 1.8em;
   }
-`
+`;
 
 const VideoBlock = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const VideoBlock = styled.div`
   @media (max-width: 1000px) {
     flex-direction: column;
   }
-`
+`;
 
 const Video = styled.div`
   height: 350px;
@@ -35,7 +35,7 @@ const Video = styled.div`
     padding: 1rem;
     height: 62.5vw;
   }
-`
+`;
 
 const VideoCaption = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ const VideoCaption = styled.div`
     max-width: none;
     align-items: center;
   }
-`
+`;
 
 const VideoTitle = styled.h2`
   margin: 0;
@@ -62,7 +62,7 @@ const VideoTitle = styled.h2`
     text-align: center;
     font-size: 1.3rem;
   }
-`
+`;
 
 const VideoYear = styled.span`
   color: #999;
@@ -73,7 +73,7 @@ const VideoYear = styled.span`
   @media (max-width: 1000px) {
     font-size: 1.15rem;
   }
-`
+`;
 
 const VideoDescription = styled.p`
   text-align: left;
@@ -87,25 +87,25 @@ const VideoDescription = styled.p`
     text-align: center;
     font-size: 1rem;
   }
-`
+`;
 
 class VideosPage extends Component {
   resolveVideoIFrame(url, title) {
-    let youtubeID = null
+    let youtubeID = null;
 
     if (url.includes('youtu.be')) {
-      const match = /http(?:s)?:\/\/youtu\.be\/([\w\d]+)/.exec(url)
+      const match = /http(?:s)?:\/\/youtu\.be\/([\w\d]+)/.exec(url);
 
       if (match !== null) {
-        youtubeID = match[1]
+        youtubeID = match[1];
       }
     } else if (url.includes('youtube.com')) {
       const match = /http(?:s)?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w\d]+)/.exec(
         url
-      )
+      );
 
       if (match !== null) {
-        youtubeID = match[1]
+        youtubeID = match[1];
       }
     }
 
@@ -120,7 +120,7 @@ class VideosPage extends Component {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-      )
+      );
     } else if (url.includes('facebook.com')) {
       return (
         <iframe
@@ -139,14 +139,14 @@ class VideosPage extends Component {
           allowtransparency="true"
           allowFullScreen
         />
-      )
+      );
     }
 
-    return null
+    return null;
   }
 
   renderVideoBlock = ({ url, title, year, description }) => {
-    const iframe = this.resolveVideoIFrame(url, title)
+    const iframe = this.resolveVideoIFrame(url, title);
 
     return (
       <VideoBlock key={url}>
@@ -157,15 +157,15 @@ class VideosPage extends Component {
         </VideoCaption>
         <Video>{iframe}</Video>
       </VideoBlock>
-    )
-  }
+    );
+  };
 
   render() {
-    const { location, data } = this.props
-    const content = data[process.env.LOCALE || 'en']
+    const { location, data } = this.props;
+    const content = data[process.env.LOCALE || 'en'];
 
-    let { pageName, title, videos } = content
-    console.log(data)
+    let { pageName, title, videos } = content;
+    console.log(data);
     return (
       <Layout location={location} pageName={pageName}>
         <Container>
@@ -173,7 +173,7 @@ class VideosPage extends Component {
           {videos.map(this.renderVideoBlock)}
         </Container>
       </Layout>
-    )
+    );
   }
 }
 
@@ -197,6 +197,6 @@ export const query = graphql`
       url
     }
   }
-`
+`;
 
-export default VideosPage
+export default VideosPage;

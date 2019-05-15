@@ -1,20 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-import Layout from '../components/layout'
-import Container from '../components/container'
+import Layout from '../components/layout';
+import Container from '../components/container';
 
 const Header = styled.h1`
   @media (max-width: 800px) {
     font-size: 1.8em;
   }
-`
+`;
 
 const Description = styled.p`
   text-align: center;
   margin: 0 0 25px;
-`
+`;
 
 const Photos = styled.section`
   width: 75%;
@@ -24,18 +24,18 @@ const Photos = styled.section`
   &:last-child {
     margin-bottom: 25px;
   }
-`
+`;
 
 const Photo = styled.img`
   display: block;
   margin: 0 auto 2em;
   width: 100%;
   max-width: 1200px;
-`
+`;
 
-const FeaturedHeader = Description.extend`
+const FeaturedHeader = styled(Description)`
   margin-bottom: 0;
-`
+`;
 
 const FeaturedLogos = styled.div`
   display: flex;
@@ -46,18 +46,18 @@ const FeaturedLogos = styled.div`
   width: 100%;
   text-align: center;
   margin: 0 auto 15px;
-`
+`;
 
 const FeaturedLogo = styled.img`
   margin: 15px;
   width: 100px;
-`
+`;
 
 const ProjectPage = ({ location, pageContext }) => {
-  const { title, tagline, articlesHeader } = pageContext
+  const { title, tagline, articlesHeader } = pageContext;
 
-  const images = pageContext.images || []
-  const articles = pageContext.articles || []
+  const images = pageContext.images || [];
+  const articles = pageContext.articles || [];
 
   return (
     <Layout location={location} pageName={title}>
@@ -79,7 +79,7 @@ const ProjectPage = ({ location, pageContext }) => {
         </Photos>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProjectPage
+export default ProjectPage;

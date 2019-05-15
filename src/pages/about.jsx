@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 import Container from '../components/container';
 import Button from '../components/button';
 
@@ -44,36 +44,33 @@ const AboutPage = ({ data, location }) => {
     pageName,
     title,
     description: {
-      childMarkdownRemark: {
-        html: description
-      }
+      childMarkdownRemark: { html: description },
     },
     buttonText,
-    buttonLink
+    buttonLink,
   } = content;
 
   return (
     <Layout location={location} pageName={pageName}>
       <Container>
         <About>
-          <Header>
-            { title }
-          </Header>
-          <Description dangerouslySetInnerHTML={{ __html: description }}>
-          </Description>
-          <ConnectButton to={buttonLink}>
-            { buttonText }
-          </ConnectButton>
+          <Header>{title}</Header>
+          <Description dangerouslySetInnerHTML={{ __html: description }} />
+          <ConnectButton to={buttonLink}>{buttonText}</ConnectButton>
         </About>
       </Container>
     </Layout>
   );
-}
+};
 
 export const query = graphql`
   query {
-    en: contentfulAbout(node_locale: { eq: "en-US" }) { ...AboutPageFragment }
-    fr: contentfulAbout(node_locale: { eq: "fr" }) { ...AboutPageFragment }
+    en: contentfulAbout(node_locale: { eq: "en-US" }) {
+      ...AboutPageFragment
+    }
+    fr: contentfulAbout(node_locale: { eq: "fr" }) {
+      ...AboutPageFragment
+    }
   }
   fragment AboutPageFragment on ContentfulAbout {
     pageName

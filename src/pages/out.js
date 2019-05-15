@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
 
 class OutNavigator extends PureComponent {
   componentDidMount() {
@@ -7,12 +7,13 @@ class OutNavigator extends PureComponent {
     const url = decodeURIComponent(href);
     const destination = /url=(.+)/.exec(url)[1];
 
-    window.location.replace(destination);
+    window.open(destination);
+    window.history.back();
   }
 
   render() {
-    return <div></div>;
+    return <div />;
   }
 }
 
-export default OutNavigator
+export default OutNavigator;

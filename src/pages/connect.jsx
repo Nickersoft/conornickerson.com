@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -29,20 +29,22 @@ const ConnectPage = ({ data, location }) => {
     <Layout location={location} pageName={pageName}>
       <Container>
         <Connect>
-          <Header>
-            { title }
-          </Header>
-          <SocialIcons icons={ socialIcons } />
+          <Header>{title}</Header>
+          <SocialIcons icons={socialIcons} />
         </Connect>
       </Container>
     </Layout>
   );
-}
+};
 
 export const query = graphql`
   query {
-    en: contentfulConnect(node_locale: { eq: "en-US" }) { ...ConnectPageFragment }
-    fr: contentfulConnect(node_locale: { eq: "fr" }) { ...ConnectPageFragment }
+    en: contentfulConnect(node_locale: { eq: "en-US" }) {
+      ...ConnectPageFragment
+    }
+    fr: contentfulConnect(node_locale: { eq: "fr" }) {
+      ...ConnectPageFragment
+    }
   }
   fragment ConnectPageFragment on ContentfulConnect {
     pageName
