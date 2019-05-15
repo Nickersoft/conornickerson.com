@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import NavBar from './navbar'
-import Footer from './footer'
-import './layout.scss'
+import NavBar from './navbar';
+import Footer from './footer';
+import './layout.scss';
 
 const Main = styled.main`
   display: block;
@@ -24,7 +24,7 @@ const Main = styled.main`
       opacity: 1;
     }
   }
-`
+`;
 
 const Layout = ({ children, pageName, fullHeight, location }) => (
   <StaticQuery
@@ -42,8 +42,8 @@ const Layout = ({ children, pageName, fullHeight, location }) => (
       }
     `}
     render={data => {
-      const content = data[process.env.LOCALE || 'en']
-      const { siteName, description, keywords } = content
+      const content = data[process.env.LOCALE || 'en'];
+      const { siteName, description, keywords } = content;
 
       return (
         <>
@@ -60,13 +60,13 @@ const Layout = ({ children, pageName, fullHeight, location }) => (
           <Main style={fullHeight ? { height: '100%' } : {}}>{children}</Main>
           <Footer />
         </>
-      )
+      );
     }}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

@@ -1,14 +1,14 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
-`
+`;
 
 const Sidebar = styled.div`
   background: #242424;
@@ -20,7 +20,7 @@ const Sidebar = styled.div`
   @media (max-width: 500px) {
     width: 100%;
   }
-`
+`;
 
 const HeaderArea = styled.div`
   margin-top: 50%;
@@ -29,7 +29,7 @@ const HeaderArea = styled.div`
   @media (max-width: 700px) {
     width: 100%;
   }
-`
+`;
 
 const Header = styled.h1`
   color: #fff;
@@ -41,7 +41,7 @@ const Header = styled.h1`
   @media (max-width: 700px) {
     font-size: 3em;
   }
-`
+`;
 
 const Subheader = styled.h2`
   color: #fff;
@@ -54,12 +54,12 @@ const Subheader = styled.h2`
   @media (max-width: 500px) {
     font-size: 1.5em;
   }
-`
+`;
 
 const Logo = styled.img`
   padding: 0px 80px 10px;
   width: 100%;
-`
+`;
 
 const CoverImage = styled.div`
   display: inline-block;
@@ -69,12 +69,12 @@ const CoverImage = styled.div`
   position: relative;
   background-position: center;
   background-size: cover;
-`
+`;
 
 const Languages = styled.div`
   display: block;
   text-align: center;
-`
+`;
 
 const Language = styled.a`
   transition: opacity 0.5s ease-in-out;
@@ -100,10 +100,10 @@ const Language = styled.a`
     border: none;
     padding-right: 0;
   }
-`
+`;
 
 const LandingPage = ({ data, location }) => {
-  const content = data[process.env.LOCALE || 'en']
+  const content = data[process.env.LOCALE || 'en'];
   const {
     pageName,
     titleLine1,
@@ -112,7 +112,7 @@ const LandingPage = ({ data, location }) => {
     coverImage: {
       file: { url: image },
     },
-  } = content
+  } = content;
 
   return (
     <Layout fullHeight location={location} pageName={pageName}>
@@ -141,8 +141,8 @@ const LandingPage = ({ data, location }) => {
         <CoverImage style={{ backgroundImage: `url('${image}')` }} />
       </FlexContainer>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -168,6 +168,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default LandingPage
+export default LandingPage;

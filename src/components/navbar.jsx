@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import styled from 'styled-components';
 
-import Container from './container'
+import Container from './container';
 
 const NavBarContainer = styled.nav`
   background-color: #242424;
@@ -13,7 +13,7 @@ const NavBarContainer = styled.nav`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 0;
   width: 100%;
-`
+`;
 
 const Navigation = styled.ul`
   margin: 0;
@@ -24,13 +24,13 @@ const Navigation = styled.ul`
   @media (max-width: 1200px) {
     display: none;
   }
-`
+`;
 
 const NavigationItem = styled.div`
   color: #fff;
   display: inline-block;
   margin: 0 50px;
-`
+`;
 
 const NavigationLink = styled(Link)`
   transition: all 0.25s ease-in-out;
@@ -44,7 +44,7 @@ const NavigationLink = styled(Link)`
   &:hover {
     color: #fff;
   }
-`
+`;
 
 const Hamburger = styled.div`
   display: none;
@@ -56,11 +56,11 @@ const Hamburger = styled.div`
   @media (max-width: 1200px) {
     display: block;
   }
-`
+`;
 
 const HamburgerIcon = styled.span`
   color: #fff;
-`
+`;
 
 const MobileNavigation = styled.ul`
   background: #242424;
@@ -71,42 +71,42 @@ const MobileNavigation = styled.ul`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 9999;
-`
+`;
 
 const MobileNavigationItem = styled.li`
   margin-bottom: 4px;
   text-align: center;
-`
+`;
 
 const getLinkForPage = (page, location) => {
-  var type = page.__typename.replace('Contentful', '').toLowerCase()
-  var url = `/${type === 'homepage' ? '' : type}`
+  var type = page.__typename.replace('Contentful', '').toLowerCase();
+  var url = `/${type === 'homepage' ? '' : type}`;
 
   return {
     url,
     external: false,
     key: type,
     text: page.pageName,
-  }
-}
+  };
+};
 
 const determineCurrent = ({ location, href }) => {
-  const linkPath = location.pathname.replace(/\//g, '')
-  const currentPath = href.replace(/\//g, '')
-  return currentPath === linkPath ? { style: { color: '#fff' } } : null
-}
+  const linkPath = location.pathname.replace(/\//g, '');
+  const currentPath = href.replace(/\//g, '');
+  return currentPath === linkPath ? { style: { color: '#fff' } } : null;
+};
 
 class NavBar extends Component {
   state = {
     mobileNavOpen: false,
-  }
+  };
 
   makeContent(location) {
-    const { mobileNavOpen } = this.state
+    const { mobileNavOpen } = this.state;
 
     return data => {
-      const content = data[process.env.LOCALE || 'en']
-      const links = content.pages.map(getLinkForPage, location)
+      const content = data[process.env.LOCALE || 'en'];
+      const links = content.pages.map(getLinkForPage, location);
 
       return (
         <NavBarContainer>
@@ -139,18 +139,18 @@ class NavBar extends Component {
             </Navigation>
           </Container>
         </NavBarContainer>
-      )
-    }
+      );
+    };
   }
 
   toggleMobileNav() {
     this.setState({
       mobileNavOpen: !this.state.mobileNavOpen,
-    })
+    });
   }
 
   render() {
-    const { location } = this.props
+    const { location } = this.props;
     return (
       <StaticQuery
         query={graphql`
@@ -188,8 +188,8 @@ class NavBar extends Component {
         `}
         render={this.makeContent(location).bind(this)}
       />
-    )
+    );
   }
 }
 
-export default NavBar
+export default NavBar;

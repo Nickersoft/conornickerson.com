@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
 
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import Container from './container'
+import Container from './container';
 
 const FooterContainer = styled.footer`
   background-color: #242424;
@@ -13,7 +13,7 @@ const FooterContainer = styled.footer`
   position: relative;
   text-align: center;
   width: 100%;
-`
+`;
 
 const Credits = styled.span`
   color: #aaa;
@@ -29,17 +29,17 @@ const Credits = styled.span`
   a {
     color: #ccc;
   }
-`
+`;
 
 class Footer extends PureComponent {
   makeContent(data) {
-    const content = data[process.env.LOCALE || 'en']
+    const content = data[process.env.LOCALE || 'en'];
 
     const {
       footer: {
         childMarkdownRemark: { html: credits },
       },
-    } = content
+    } = content;
 
     return (
       <FooterContainer>
@@ -47,7 +47,7 @@ class Footer extends PureComponent {
           <Credits dangerouslySetInnerHTML={{ __html: credits }} />
         </Container>
       </FooterContainer>
-    )
+    );
   }
 
   render() {
@@ -72,8 +72,8 @@ class Footer extends PureComponent {
         `}
         render={this.makeContent.bind(this)}
       />
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

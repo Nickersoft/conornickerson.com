@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const SocialList = styled.ul`
@@ -34,12 +34,13 @@ const SocialIcons = ({ icons }) => (
   <SocialList>
     {icons.map(icon => (
       <SocialItem key={icon.fontAwesomeIcon}>
-        <SocialLink 
-          to={`/out?url=${encodeURIComponent(icon.link)}`} 
-          className={`fa fa-${icon.fontAwesomeIcon}`} />
+        <SocialLink
+          to={`/out?url=${encodeURIComponent(icon.link)}`}
+          className={`fa fa-${icon.fontAwesomeIcon}`}
+        />
       </SocialItem>
     ))}
   </SocialList>
-)
+);
 
-export default SocialIcons
+export default SocialIcons;

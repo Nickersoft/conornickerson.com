@@ -10,7 +10,7 @@ const Button = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background-color: #FF6756;
+    background-color: #ff6756;
   }
 `;
 
