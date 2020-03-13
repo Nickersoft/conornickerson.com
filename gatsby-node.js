@@ -1,34 +1,40 @@
-const webpack = require('webpack');
-const path = require('path')
-const Img = require('gatsby-image');
+const path = require('path');
 
-const createPages = (graphql, createPage, query, template, prefix, skipIfLink = false) => {
-  const resolvedTemplate = path.resolve(template)
-  
+const createPages = (
+  graphql,
+  createPage,
+  query,
+  template,
+  prefix,
+  skipIfLink = false
+) => {
+  const resolvedTemplate = path.resolve(template);
+
   return new Promise((resolve, reject) => {
-    graphql(query).then((result) => {
-        const locale = process.env.LOCALE || 'en';
-        const content = result.data[locale];
+    graphql(query).then(result => {
+      const locale = process.env.LOCALE || 'en';
+      const content = result.data[locale];
 
-        if (result.errors) {
-          reject(result.errors)
-        }
-
-        content.edges.forEach((edge) => {
-          if ((skipIfLink && !edge.node.link) || !skipIfLink) {
-            createPage({
-              path: `/${prefix}/${edge.node.title.toLowerCase().replace(' ', '-')}`,
-              component: resolvedTemplate,
-              context: edge.node
-            });
-          }
-        });
-
-        resolve();
+      if (result.errors) {
+        reject(result.errors);
       }
-    );
+
+      content.edges.forEach(edge => {
+        if ((skipIfLink && !edge.node.link) || !skipIfLink) {
+          createPage({
+            path: `/${prefix}/${edge.node.title
+              .toLowerCase()
+              .replace(' ', '-')}`,
+            component: resolvedTemplate,
+            context: edge.node,
+          });
+        }
+      });
+
+      resolve();
+    });
   });
-}
+};
 
 const createProjectPages = (graphql, createPage) => {
   const template = 'src/pages/project.jsx';
@@ -79,7 +85,7 @@ const createProjectPages = (graphql, createPage) => {
   `;
 
   return createPages(graphql, createPage, query, template, prefix, true);
-}
+};
 
 const createGalleryPages = (graphql, createPage) => {
   const template = 'src/pages/gallery.jsx';
@@ -113,24 +119,24 @@ const createGalleryPages = (graphql, createPage) => {
   `;
 
   return createPages(graphql, createPage, query, template, prefix);
-}
+};
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   return Promise.all([
     createGalleryPages(graphql, createPage),
-    createProjectPages(graphql, createPage)
+    createProjectPages(graphql, createPage),
   ]);
-}
+};
 
 exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
     plugins: [
       plugins.define({
         'process.env': {
-          LOCALE: JSON.stringify(process.env.LOCALE || 'en')
-        }
-      })
-    ]
-  })
-}
+          LOCALE: JSON.stringify(process.env.LOCALE || 'en'),
+        },
+      }),
+    ],
+  });
+};
